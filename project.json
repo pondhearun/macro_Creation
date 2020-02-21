@@ -3,23 +3,34 @@
   "description": "Sample project to illustrate how to use Invoke VBA activity",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.6.1]"
+    "MavenickConsulting.AutocloseMsgBox.Activities": "[1.1.2]",
+    "UiPath": "[19.10.7355.17620]",
+    "UiPath.Excel.Activities": "[2.6.1]",
+    "UiPath.UIAutomation.Activities": "[19.11.2]"
   },
-  "schemaVersion": "3.2",
-  "studioVersion": "18.4.1.0",
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "19.12.0.61",
   "projectVersion": "1.0.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
     "excludedLoggedData": [
       "Private:*",
       "*password*"
-    ]
+    ],
+    "executionType": "Workflow"
   },
-  "projectType": "Workflow",
-  "libraryOptions": {
-    "includeOriginalXaml": false,
-    "privateWorkflows": []
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "fileInfos": []
   },
-  "webServices": []
+  "expressionLanguage": "VisualBasic"
 }

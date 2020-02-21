@@ -1,15 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Main_1"
- xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
- xmlns:s="clr-namespace:System;assembly=mscorlib"
- xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
- xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
- xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
- xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
- xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
- xmlns:ui="http://schemas.uipath.com/workflow/activities"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="496,1052" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:m="clr-namespace:Mavenick;assembly=AutoCloseMsgBox" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -59,68 +48,54 @@
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This sample shows how to invoke VBA from within a workflow.&#xA;It returns the names of the first 3 sheets in a workbook.&#xD;&#xA;&#xD;&#xA;Note: Trust Access to the VBA project object model must be enabled from Excel; otherwise an error is thrown. See https://activities.uipath.com/docs/invoke-vba for instruction." DisplayName="Invoke VBA sample" sap2010:WorkflowViewState.IdRef="Sequence_2">
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Test.xlsx">
+  <Sequence sap2010:Annotation.AnnotationText="This sample shows how to invoke VBA from within a workflow.&#xA;It returns the names of the first 3 sheets in a workbook.&#xA;&#xA;Note: Trust Access to the VBA project object model must be enabled from Excel; otherwise an error is thrown. See https://activities.uipath.com/docs/invoke-vba for instruction." DisplayName="Invoke VBA sample" sap:VirtualizedContainerService.HintSize="476,952" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <m:AutoCloseMessageBox ChosenButton="{x:Null}" Buttons="Ok" CloseMessageBox="5" DisplayName="Auto close message box" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AutoCloseMessageBox_1" Message="Excel File" Title="Opening Excel" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,696" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Test.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,587" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Object" Name="sheets" />
               <Variable x:TypeArguments="s:String[]" Name="sheetNames" />
             </Sequence.Variables>
-            <ui:InvokeVBA sap2010:Annotation.AnnotationText="CodeFilePath: the VBA code being invoked can be put in a .txt file and indicated in this input property.&#xA;&#xA;EntryMethodName: this is the function/sub name that is going to be called.&#xA;&#xA;EntryMethodParameters: this is the parameters that are going to be passsed to the function/sub.&#xA;&#xA;OutputValue: any output will be saved in this property." CodeFilePath="VBA.txt" DisplayName="Invoke VBA" EntryMethodName="GetFirstNSheetNames" EntryMethodParameters="[{3}]" sap2010:WorkflowViewState.IdRef="InvokeVBA_1" OutputValue="[sheets]" />
-            <Assign sap2010:Annotation.AnnotationText="We know the function we called returns a string array." DisplayName="Convert to string array" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeVBA sap2010:Annotation.AnnotationText="CodeFilePath: the VBA code being invoked can be put in a .txt file and indicated in this input property.&#xA;&#xA;EntryMethodName: this is the function/sub name that is going to be called.&#xA;&#xA;EntryMethodParameters: this is the parameters that are going to be passsed to the function/sub.&#xA;&#xA;OutputValue: any output will be saved in this property." CodeFilePath="VBA.txt" DisplayName="Invoke VBA" EntryMethodName="GetFirstNSheetNames" EntryMethodParameters="[{3}]" sap:VirtualizedContainerService.HintSize="334,249" sap2010:WorkflowViewState.IdRef="InvokeVBA_1" OutputValue="[sheets]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeVBA>
+            <Assign sap2010:Annotation.AnnotationText="We know the function we called returns a string array." DisplayName="Convert to string array" sap:VirtualizedContainerService.HintSize="314,104" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[sheetNames]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="s:String[]">[CType(sheets, String())]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <WriteLine DisplayName="Write sheet names" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[String.Join(&quot;,&quot;, sheetNames)]" />
+            <WriteLine DisplayName="Write sheet names" sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[String.Join(&quot;,&quot;, sheetNames)]" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <sads:DebugSymbol.Symbol>dzpDOlxVc2Vyc1xUZW1wXERvY3VtZW50c1xVaVBhdGhcSW52b2tlLVZCQS1zYW1wbGVcTWFpbi54YW1sDj4DWQ4CAQE/BVcgAgECP6ABP6sBAgESRQtUFgIBA0oNSuEEAgEMSw1SFgIBB1MNU5gBAgEESpIESpkEAgERSuYDSvsDAgEQSrMDSrwDAgEPStQESt4EAgENUDpQUwIBCk07TUcCAQhTa1OVAQIBBQ==</sads:DebugSymbol.Symbol>
   </Sequence>
-  <sap2010:WorkflowViewState.ViewStateManager>
-    <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InvokeVBA_1" sap:VirtualizedContainerService.HintSize="314,291">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,104">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="314,62" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,661">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ExcelApplicationScope_1" sap:VirtualizedContainerService.HintSize="414,770" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="436,1002">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="476,1122" />
-    </sap2010:ViewStateManager>
-  </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
