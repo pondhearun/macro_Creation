@@ -1,0 +1,25 @@
+{
+  "name": "Invoke-VBA-sample",
+  "description": "Sample project to illustrate how to use Invoke VBA activity",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.6.1]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.4.1.0",
+  "projectVersion": "1.0.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "webServices": []
+}
